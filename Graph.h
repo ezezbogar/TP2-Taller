@@ -1,8 +1,17 @@
-//
-// Created by ezezbogar on 30/10/20.
-//
+#ifndef _GRAPH_H
+#define _GRAPH_H
 
-#ifndef TP2_TALLER_GRAPH_H
-#define TP2_TALLER_GRAPH_H
+#include "Node.h"
 
-#endif //TP2_TALLER_GRAPH_H
+class Graph {
+private:
+    std::vector<Node> nodes;
+
+public:
+    /* Constructor */
+    Graph(int cantidadNodos);
+
+    /* Destructor */
+    ~Graph();
+};
+#endif //_GRAPH_H

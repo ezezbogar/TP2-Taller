@@ -6,7 +6,25 @@
 int main (int argc, char** argv) {
 
 
-    std::fstream src;
+    Graph grafito(5);
+
+    std::vector<bool> mybools;
+    mybools.reserve(7);
+    for(int i = 0; i < 7; i++) {
+        mybools.push_back(false);
+    }
+
+    for(int i = 0; i < 7; i++) {
+        std::cout << mybools[i];
+    }
+
+    mybools[3] = true;
+
+    for(int i = 0; i < 7; i++) {
+        std::cout << mybools[i];
+    }
+
+/*    std::fstream src;
     src.open("/home/ezezbogar/git/TP2-Taller/tcp.bpf");
 
     Parser parseador;
@@ -50,5 +68,6 @@ int main (int argc, char** argv) {
     } else {
         std::cerr << "Argumentos invalidos" << std::endl;
         return -1;
-    }
+    }*/
+    return 0;
 }

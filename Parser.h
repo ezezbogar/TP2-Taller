@@ -2,6 +2,7 @@
 #define _PARSER_H
 
 #include "Label.h"
+#include "Graph.h"
 #include <vector>
 
 class Parser {
