@@ -12,8 +12,10 @@ class Label {
     /* Constructor */
     Label(const std::string labelName, const int nodeNumber);
 
+    /* Devuelve un string con el nombre del label */
     std::string getLabelName();
 
+    /* Devuelve el numero de nodo en el que se encuentra el label */
     int getNodeNumber();
 
     /* Destructor */

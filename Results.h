@@ -15,8 +15,10 @@ class Results {
     /* Constructor */
     Results();
 
+    /* Guarda el nombre de un archivo con su respectivo exitcode */
     void loadResult(std::string filename, std::string exitcode);
 
+    /* Muestra los resultados de todos los archivos por pantalla */
     void showResults();
 
     /* Destructor */

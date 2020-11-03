@@ -8,27 +8,28 @@ Parser::Parser() {
     this->cantidadNodos = 0;
 }
 
-bool isJumpCode(const std::string instruction) {
+bool Parser::isJumpCode(const std::string instruction) {
     bool isJumpCode = false;
-    if (instruction.compare("jmp") == 0 || instruction.compare("ja") == 0) {
+    if (instruction.compare("jmp") == 0 ||
+    instruction.compare("ja") == 0) {
         isJumpCode = true;
-    }
-    if (instruction.compare("jeq") == 0 || instruction.compare("jneq") == 0) {
+    } else if (instruction.compare("jeq") == 0 ||
+    instruction.compare("jneq") == 0) {
         isJumpCode = true;
-    }
-    if (instruction.compare("jne") == 0 || instruction.compare("jlt") == 0) {
+    } else if (instruction.compare("jne") == 0 ||
+    instruction.compare("jlt") == 0) {
         isJumpCode = true;
-    }
-    if (instruction.compare("jle") == 0 || instruction.compare("jgt") == 0) {
+    } else if (instruction.compare("jle") == 0 ||
+    instruction.compare("jgt") == 0) {
         isJumpCode = true;
-    }
-    if (instruction.compare("jge") == 0 || instruction.compare("jset") == 0) {
+    } else if (instruction.compare("jge") == 0 ||
+    instruction.compare("jset") == 0) {
         isJumpCode = true;
     }
     return isJumpCode;
 }
 
-bool isRetCode(const std::string instruction) {
+bool Parser::isRetCode(const std::string instruction) {
     bool isRetCode = false;
     if (instruction.compare("ret") == 0) {
         isRetCode = true;
@@ -50,8 +51,8 @@ void Parser::loadGraph(Graph& graph, std::fstream& file) {
         } else if ( c == ' ' && pos != 0 &&
         isJumpCode(std::string(buf, pos)) ) {
             isJumpLine = true;
-            pos = 0;
             arguments = 1;
+            pos = 0;
         } else if ( c == ' ' && pos != 0 && isRetCode(std::string(buf, pos)) ) {
             isRetLine = true;
         } else if ( c == ',' && isJumpLine ) {
@@ -59,8 +60,8 @@ void Parser::loadGraph(Graph& graph, std::fstream& file) {
             if (labelNodeNumber != ERROR) {
                 graph.setEdge(currentNodeNumber, labelNodeNumber);
             }
-            pos = 0;
             arguments++;
+            pos = 0;
         } else if ( c == '\n' && isJumpLine ) {
             labelNodeNumber = getLabelNodeNumber(std::string(buf, pos));
             if (labelNodeNumber != ERROR) {
@@ -69,18 +70,16 @@ void Parser::loadGraph(Graph& graph, std::fstream& file) {
             if (arguments == 2) {
                 graph.setEdge(currentNodeNumber, currentNodeNumber + 1);
             }
-            pos = 0;
             currentNodeNumber++;
             isJumpLine = false;
+            pos = 0;
         } else if ( c == '\n' && isRetLine ) {
             currentNodeNumber++;
-            isJumpLine = false;
             isRetLine = false;
             pos = 0;
         } else if ( c == '\n' && pos != 0 ) {
             graph.setEdge(currentNodeNumber, currentNodeNumber + 1);
             currentNodeNumber++;
-            isJumpLine = false;
             pos = 0;
         }
     }

@@ -18,21 +18,22 @@ class Graph {
     /* Constructor */
     Graph(int cantidadNodos);
 
+    /* Crea una arista */
     void setEdge(int nodeNumberOrigin, int nodeNumberDest);
 
-    /* Analiza si el programa eBPF puede caer en un loop infinito */
+    /* Analiza si el grafo tiene ciclos */
     void DFS();
 
-    /* Analiza si en el programa eBPF existen instrucciones que
-     * nunca son utilizadas (Usar despues de DFS)*/
+    /* Analiza si en el grafo existen nodos no accesibles
+     * (Usar despues de DFS) */
     void checkUnusedInstructions();
 
-    /* Devuelve "true" si el programa eBPF tiene ciclos, en el otro
-     * caso "false" (Usar despues de DFS)*/
+    /* Devuelve "true" si el grafo tiene ciclos, en el otro
+     * caso "false" (Usar despues de DFS) */
     bool programhasCicles();
 
-    /* Devuelve "true" si el programa eBPF tiene instrucciones que
-     * nunca son utilizadas (Usar despues de checkUnusedInstructions)*/
+    /* Devuelve "true" si el grafo tiene nodos no accesibles, en
+     * el otro caso "false" (Usar despues de checkUnusedInstructions)*/
     bool programhasUnusedInstructions();
 
     /* Destructor */
