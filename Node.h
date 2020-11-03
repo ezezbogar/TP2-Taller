@@ -1,26 +1,28 @@
-#ifndef _NODE_H
-#define _NODE_H
+#ifndef NODE_H_
+#define NODE_H_
 
 #include <vector>
 
 class Node {
-private:
+ private:
     bool visited;
     std::vector<bool> edges;
 
-public:
-
+ public:
     /* Constructor */
     Node(int cantidadNodos);
 
     void setNodeVisited();
 
+    bool isVisited();
+
     void setEdge(int nodeNumber);
+
+    bool getEdge(int edgeNumber);
 
     /* Destructor */
     ~Node();
-
 };
 
 
-#endif //_NODE_H
+#endif  // NODE_H_

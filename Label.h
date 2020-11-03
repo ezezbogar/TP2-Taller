@@ -1,14 +1,14 @@
-#ifndef _LABEL_H
-#define _LABEL_H
+#ifndef LABEL_H_
+#define LABEL_H_
 
 #include <string>
 
 class Label {
-private:
+ private:
     std::string labelName;
     int nodeNumber;
 
-public:
+ public:
     /* Constructor */
     Label(const std::string labelName, const int nodeNumber);
 
@@ -18,9 +18,7 @@ public:
 
     /* Destructor */
     ~Label();
-
-
 };
 
 
-#endif //_LABEL_H
+#endif  // LABEL_H_

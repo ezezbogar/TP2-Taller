@@ -1,15 +1,66 @@
 #include "Graph.h"
 
-//Node se pasa y se destruye, push_back ag //Node se pasa y se destruye
-//Add element at the end
-//Adds a new element at the end of the vector, after its current last element.
-//The content of val is copied (or moved) to the new element.
-
 Graph::Graph(int cantidadNodos) {
     this->nodes.reserve(cantidadNodos);
-    for(int i = 0; i < cantidadNodos; i++) {
+    this->marks.reserve(cantidadNodos);
+    this->nums.reserve(cantidadNodos);
+    this->i = 0;
+    this->hasCicles = false;
+    this->hasUnusedInstructions = false;
+
+    for (int j = 0; j < cantidadNodos; j++) {
         this->nodes.push_back(Node(cantidadNodos));
     }
+    for (int j = 0; j < cantidadNodos; j++) {
+        this->marks.push_back(false);
+    }
+    for (int j = 0; j < cantidadNodos; j++) {
+        this->nums.push_back(0);
+    }
+}
+
+void Graph::setEdge(int nodeNumberOrigin, int nodeNumberDest) {
+    this->nodes[nodeNumberOrigin].setEdge(nodeNumberDest);
+}
+
+void Graph::DFS() {
+    _DFS(0);
+}
+
+void Graph::_DFS(const int nodeNumber) {
+    this->i++;
+    this->nums[nodeNumber] = i;
+    this->marks[nodeNumber] = true;
+    this->nodes[nodeNumber].setNodeVisited();
+    for (unsigned long int j = 0; j < this->nodes.size(); j++) {
+        if (this->nodes[nodeNumber].getEdge(j) == true) {
+            if (this->nums[j] == 0) {  // Tree edge
+                _DFS(j);
+            } else if (this->nums[j] >
+            this->nums[nodeNumber]) {  // Forward edge
+            } else if (this->marks[j] == 0) {  // Cross edge
+            } else {
+                this->hasCicles = true;  // Back edge (Graph has cicles)
+            }
+        }
+    }
+    this->marks[nodeNumber] = false;
+}
+
+void Graph::checkUnusedInstructions() {
+    for (unsigned long int i = 0; i < this->nodes.size(); i++) {
+        if (this->nodes[i].isVisited() == false) {
+            this->hasUnusedInstructions = true;
+        }
+    }
+}
+
+bool Graph::programhasCicles() {
+    return this->hasCicles;
+}
+
+bool Graph::programhasUnusedInstructions() {
+    return this->hasUnusedInstructions;
 }
 
 Graph::~Graph() {}

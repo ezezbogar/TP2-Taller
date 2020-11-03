@@ -1,28 +1,29 @@
-#ifndef _PARSER_H
-#define _PARSER_H
+#ifndef PARSER_H_
+#define PARSER_H_
 
 #include "Label.h"
 #include "Graph.h"
 #include <vector>
 
 class Parser {
-private:
-    //FILE* fd;
+ private:
     std::vector<Label> labels;
     int cantidadNodos;
 
-public:
+ public:
     /* Constructor */
     Parser();
 
     void getLabels(std::fstream& file);
 
-    void _showLabels(); //Borrar
+    void loadGraph(Graph& graph, std::fstream& file);
+
+    int getLabelNodeNumber(std::string name);
+
+    int getNodesAmount();
 
     /* Destructor */
     ~Parser();
 };
 
-
-
-#endif //_PARSER_H
+#endif  // PARSER_H_
