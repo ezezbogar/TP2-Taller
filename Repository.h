@@ -11,12 +11,17 @@ class Repository {
     int verifiedFiles;
     std::mutex mutex;
  public:
+    /* Constructor */
     Repository(const int argc, char** argv);
 
+    /* Devuelve la cantidad de archivos en el repositorio */
     int getAmountOfFiles();
 
+    /* Devuelve el nombre de un archivo que todavia no haya sido
+     * verificado */
     bool getFile(std::string &fileName);
 
+    /* Destructor */
     ~Repository();
 };
 #endif  // REPOSITORY_H_

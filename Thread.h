@@ -11,13 +11,14 @@ class Thread {
     /* Constructor */
     Thread();
 
-    /* Ejecuta el thread con el metodo abstracto trabajar, que sera
+    /* Ejecuta el thread con el metodo abstracto verificar, que sera
      * implementado por las clases hijas */
     void start();
 
     /* Bloquea el thread hasta que los otros completen su ejecucion */
     void join();
 
+    /* Este metodo es implementado por las clases hijas */
     virtual void verificar() = 0;
 
     /* Destructor */

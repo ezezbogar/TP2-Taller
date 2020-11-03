@@ -16,6 +16,8 @@ class eBPFVerifier : public Thread {
     eBPFVerifier(Repository& repository, Results& results) :
                 repository(repository), results(results) {}
 
+    /* Extrae un archivo de "repository" mientras todavia queden, verifica si tiene
+     * ciclos e instrucciones sin utilizar y guarda el resultado en "results" */
     void verificar() override;
 
     /* Destructor */

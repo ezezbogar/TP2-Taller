@@ -19,11 +19,11 @@ class TP {
         repository(repository), results(results),
         threadsAmount(threadsAmount) {}
 
+    /* Ejecuta el TP */
     void ejecutar();
 
     /* Destructor */
     ~TP();
 };
-
 
 #endif  // TP_H_

@@ -34,4 +34,5 @@ void eBPFVerifier::_saveResults(std::string fileName, Graph &graph) {
         this->results.loadResult(fileName, "GOOD");
     }
 }
+
 eBPFVerifier::~eBPFVerifier() {}
