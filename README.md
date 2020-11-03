@@ -4,11 +4,11 @@
 
 ### Taller de Programación I
 
-​	Diagrama con las principales clases del trabajo practico:
+​	Diagrama con las principales clases del trabajo práctico:
 
 ![Class Diagram](https://github.com/ezezbogar/TP2-Taller/blob/main/Images/Class-Diagram.png)
 
-​	La clase "TP" funciona como hilo principal del programa y era redundante incluirla en el Diagrama. Esta se encarga simplemente de inicializar los threads y quedarse a la espera de que terminen de ejecutarse.
+​	La clase "TP" funciona como hilo principal del programa y era redundante incluirla en el diagrama. Esta se encarga simplemente de inicializar los threads y quedarse a la espera de que terminen de ejecutarse.
 
 ​	La clase "eBPFVerifier" es la principal clase del TP, la cual se encarga de preguntar por nombres de archivos a "Repository", procesarlos, verificando si tienen ciclos o instrucciones que nunca son ejecutadas, y guardar los resultados en "Results".
 
