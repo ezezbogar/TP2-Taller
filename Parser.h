@@ -31,17 +31,17 @@ class Parser {
     int getLabelNodeNumber(std::string name);
 
     /* Devuelve la cantidad de nodos (Instrucciones) */
-    int getNodesAmount();
+    int getNodesAmount() const;
 
     /* Destructor */
     ~Parser();
 
 private:
     /* Devuelve "true" si el string es algun jumpcode */
-    bool isJumpCode(const std::string& instruction);
+    bool isJumpCode(const std::string& instruction) const;
 
     /* Devuelve "true" si el string es igual a "ret" */
-    bool isRetCode(const std::string& instruction);
+    bool isRetCode(const std::string& instruction) const;
 };
 
 #endif  // PARSER_H_

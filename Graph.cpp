@@ -55,11 +55,11 @@ void Graph::checkUnusedInstructions() {
     }
 }
 
-bool Graph::programhasCicles() {
+bool Graph::programhasCicles() const {
     return this->hasCicles;
 }
 
-bool Graph::programhasUnusedInstructions() {
+bool Graph::programhasUnusedInstructions() const {
     return this->hasUnusedInstructions;
 }
 

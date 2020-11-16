@@ -22,10 +22,10 @@ class Label {
     Label operator=(const Label& label) = delete;
 
     /* Devuelve un string con el nombre del label */
-    std::string getLabelName();
+    std::string getLabelName() const;
 
     /* Devuelve el numero de nodo en el que se encuentra el label */
-    int getNodeNumber();
+    int getNodeNumber() const;
 
     /* Destructor */
     ~Label();

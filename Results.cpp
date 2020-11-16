@@ -3,7 +3,7 @@
 
 Results::Results() {}
 
-void Results::showResults() {
+void Results::showResults() const {
     for (long unsigned int i = 0; i < this->filenames.size(); i++) {
         std::cout << this->filenames[i] << " " <<
         this->exitCodes[i] << std::endl;

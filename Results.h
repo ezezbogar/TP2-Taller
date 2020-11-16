@@ -25,7 +25,7 @@ class Results {
     void loadResult(std::string filename, std::string exitcode);
 
     /* Muestra los resultados de todos los archivos por pantalla */
-    void showResults();
+    void showResults() const;
 
     /* Destructor */
     ~Results();

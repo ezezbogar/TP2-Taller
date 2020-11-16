@@ -37,11 +37,11 @@ class Graph {
 
     /* Devuelve "true" si el grafo tiene ciclos, en el otro
      * caso "false" (Usar despues de DFS) */
-    bool programhasCicles();
+    bool programhasCicles() const;
 
     /* Devuelve "true" si el grafo tiene nodos no accesibles, en
      * el otro caso "false" (Usar despues de checkUnusedInstructions)*/
-    bool programhasUnusedInstructions();
+    bool programhasUnusedInstructions() const;
 
     /* Destructor */
     ~Graph();

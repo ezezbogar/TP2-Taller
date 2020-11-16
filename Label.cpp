@@ -12,11 +12,11 @@ Label::Label(Label &&label) noexcept {
     label.nodeNumber = -1;
 }
 
-std::string Label::getLabelName() {
+std::string Label::getLabelName() const {
     return this->labelName;
 }
 
-int Label::getNodeNumber() {
+int Label::getNodeNumber() const {
     return this->nodeNumber;
 }
 

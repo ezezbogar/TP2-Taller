@@ -9,7 +9,7 @@ Parser::Parser() {
     this->cantidadNodos = 0;
 }
 
-bool Parser::isJumpCode(const std::string& instruction) {
+bool Parser::isJumpCode(const std::string& instruction) const {
     bool isJumpCode = false;
     if (instruction.compare("jmp") == 0 ||
     instruction.compare("ja") == 0) {
@@ -30,7 +30,7 @@ bool Parser::isJumpCode(const std::string& instruction) {
     return isJumpCode;
 }
 
-bool Parser::isRetCode(const std::string& instruction) {
+bool Parser::isRetCode(const std::string& instruction) const {
     bool isRetCode = false;
     if (instruction.compare("ret") == 0) {
         isRetCode = true;
@@ -116,7 +116,7 @@ int Parser::getLabelNodeNumber(std::string name) {
     return ERROR;
 }
 
-int Parser::getNodesAmount() {
+int Parser::getNodesAmount() const {
     return this->cantidadNodos;
 }
 

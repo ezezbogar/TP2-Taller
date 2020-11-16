@@ -19,7 +19,7 @@ void Node::setNodeVisited() {
     this->visited = true;
 }
 
-bool Node::isVisited() {
+bool Node::isVisited() const {
     return this->visited;
 }
 
@@ -27,7 +27,7 @@ void Node::setEdge(int nodeNumber) {
     this->edges[nodeNumber] = true;
 }
 
-bool Node::getEdge(int edgeNumber) {
+bool Node::getEdge(int edgeNumber) const {
     return this->edges[edgeNumber];
 }
 
