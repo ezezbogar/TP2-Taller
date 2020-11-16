@@ -19,6 +19,12 @@ class TP {
         repository(repository), results(results),
         threadsAmount(threadsAmount) {}
 
+    /* Constructor por copia borrado */
+    TP(const TP& tp) = delete;
+
+    /* Asignacion por copia borrado */
+    TP operator=(const TP& tp) = delete;
+
     /* Ejecuta el TP */
     void ejecutar();
 
