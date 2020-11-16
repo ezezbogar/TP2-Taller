@@ -22,7 +22,7 @@ class Results {
     Results operator=(const Results& results) = delete;
 
     /* Guarda el nombre de un archivo con su respectivo exitcode */
-    void loadResult(std::string filename, std::string exitcode);
+    void loadResult(const std::string& filename, const std::string& exitcode);
 
     /* Muestra los resultados de todos los archivos por pantalla */
     void showResults() const;

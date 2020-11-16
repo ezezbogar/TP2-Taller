@@ -11,7 +11,7 @@ void eBPFVerifier::verificar() {
     }
 }
 
-void eBPFVerifier::_verificar(std::string fileName) {
+void eBPFVerifier::_verificar(std::string& fileName) {
     std::fstream src;
     src.open(fileName);
     Parser parser;
@@ -24,7 +24,7 @@ void eBPFVerifier::_verificar(std::string fileName) {
     src.close();
 }
 
-void eBPFVerifier::_saveResults(std::string fileName, const Graph &graph) {
+void eBPFVerifier::_saveResults(std::string& fileName, const Graph &graph) {
     if ( graph.programhasCicles() ) {
         this->results.loadResult(fileName, "FAIL: cycle detected");
     } else if ( graph.programhasUnusedInstructions() ) {

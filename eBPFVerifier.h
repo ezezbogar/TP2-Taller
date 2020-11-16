@@ -31,9 +31,9 @@ class eBPFVerifier : public Thread {
     ~eBPFVerifier();
 
  private:
-    void _verificar(std::string fileName);
+    void _verificar(std::string& fileName);
 
-    void _saveResults(std::string fileName, const Graph &graph);
+    void _saveResults(std::string& fileName, const Graph &graph);
 };
 
 #endif  // EBPFVERIFIER_H_

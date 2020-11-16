@@ -28,7 +28,7 @@ class Parser {
     void loadGraph(Graph& graph, std::fstream& file);
 
     /* Devuelve el numero de nodo en el que se encuentra el label indicado */
-    int getLabelNodeNumber(std::string name);
+    int getLabelNodeNumber(const std::string& name);
 
     /* Devuelve la cantidad de nodos (Instrucciones) */
     int getNodesAmount() const;

@@ -10,7 +10,8 @@ void Results::showResults() const {
     }
 }
 
-void Results::loadResult(std::string filename, std::string exitcode) {
+void Results::loadResult(const std::string& filename,
+                         const std::string& exitcode) {
     std::unique_lock<std::mutex> lck(this->mutex);
     long unsigned int pos = 0;
 

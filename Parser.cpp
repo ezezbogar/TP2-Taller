@@ -107,7 +107,7 @@ void Parser::getLabels(std::fstream& file) {
     file.seekg(0);
 }
 
-int Parser::getLabelNodeNumber(std::string name) {
+int Parser::getLabelNodeNumber(const std::string& name) {
     for (long unsigned int i = 0; i < this->labels.size(); i++) {
         if (this->labels[i].getLabelName().compare(name) == 0) {
             return this->labels[i].getNodeNumber();
