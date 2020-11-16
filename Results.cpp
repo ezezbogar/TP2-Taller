@@ -11,7 +11,7 @@ void Results::showResults() {
 }
 
 void Results::loadResult(std::string filename, std::string exitcode) {
-    this->mutex.lock();
+    std::unique_lock<std::mutex> lck (this->mutex);
     long unsigned int pos = 0;
 
     std::vector<std::string>::iterator itFiles;
@@ -27,7 +27,6 @@ void Results::loadResult(std::string filename, std::string exitcode) {
     }
     this->filenames.insert(itFiles + pos, filename);
     this->exitCodes.insert(itCodes + pos, exitcode);
-    this->mutex.unlock();
 }
 
 Results::~Results() {}

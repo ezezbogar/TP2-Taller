@@ -18,6 +18,12 @@ class Graph {
     /* Constructor */
     Graph(int cantidadNodos);
 
+    /* Constructor por copia borrado */
+    Graph(const Graph& graph) = delete;
+
+    /* Asignacion por copia borrado */
+    Graph operator=(const Graph& graph) = delete;
+
     /* Crea una arista */
     void setEdge(int nodeNumberOrigin, int nodeNumberDest);
 

@@ -12,6 +12,15 @@ class Node {
     /* Constructor */
     Node(int cantidadNodos);
 
+    /* Constructor por movimiento */
+    Node(Node&& node) noexcept;
+
+    /* Constructor por copia borrado */
+    Node(const Node& node) = delete;
+
+    /* Asignacion por copia borrado */
+    Node operator=(const Node& node) = delete;
+
     /* Marca el nodo como visitado */
     void setNodeVisited();
 

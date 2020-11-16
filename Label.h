@@ -12,6 +12,15 @@ class Label {
     /* Constructor */
     Label(const std::string labelName, const int nodeNumber);
 
+    /* Constructor por movimiento */
+    Label(Label&& label) noexcept;
+
+    /* Constructor por copia borrado */
+    Label(const Label& label) = delete;
+
+    /* Asignacion por copia borrado */
+    Label operator=(const Label& label) = delete;
+
     /* Devuelve un string con el nombre del label */
     std::string getLabelName();
 

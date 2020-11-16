@@ -14,6 +14,12 @@ class Parser {
     /* Constructor */
     Parser();
 
+    /* Constructor por copia borrado */
+    Parser(const Parser& parser) = delete;
+
+    /* Asignacion por copia borrado */
+    Parser operator=(const Parser& parser) = delete;
+
     /* Analiza el archivo eBPF y extrae los labels */
     void getLabels(std::fstream& file);
 

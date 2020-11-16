@@ -10,9 +10,16 @@ class Repository {
     std::vector<std::string> files;
     int verifiedFiles;
     std::mutex mutex;
+
  public:
     /* Constructor */
     Repository(const int argc, char** argv);
+
+    /* Constructor por copia borrado */
+    Repository(const Repository& repository) = delete;
+
+    /* Asignacion por copia borrado */
+    Repository operator=(const Repository& repository) = delete;
 
     /* Devuelve la cantidad de archivos en el repositorio */
     int getAmountOfFiles();

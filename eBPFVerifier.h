@@ -16,6 +16,12 @@ class eBPFVerifier : public Thread {
     eBPFVerifier(Repository& repository, Results& results) :
                 repository(repository), results(results) {}
 
+    /* Constructor por copia borrado */
+    eBPFVerifier(const eBPFVerifier& ebpfVerifier) = delete;
+
+    /* Asignacion por copia borrado */
+    eBPFVerifier operator=(const eBPFVerifier& ebpfVerifier) = delete;
+
     /* Extrae un archivo de "repository" mientras todavia queden, verifica si tiene
      * ciclos e instrucciones sin utilizar y guarda el resultado en "results" */
     void verificar() override;

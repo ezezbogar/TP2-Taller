@@ -13,7 +13,7 @@ int Repository::getAmountOfFiles() {
 }
 
 bool Repository::getFile(std::string &fileName) {
-    this->mutex.lock();
+    std::unique_lock<std::mutex> lck (this->mutex);
     bool fileLeft = false;
     if ( static_cast<long unsigned int>(this->verifiedFiles)
     < this->files.size() ) {
@@ -21,7 +21,6 @@ bool Repository::getFile(std::string &fileName) {
         this->verifiedFiles++;
         fileLeft = true;
     }
-    this->mutex.unlock();
     return fileLeft;
 }
 

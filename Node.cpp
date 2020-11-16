@@ -9,6 +9,11 @@ Node::Node(int cantidadNodos) {
     }
 }
 
+Node::Node(Node &&node) noexcept {
+    this->edges = std::move(node.edges);
+    this->visited = node.visited;
+}
+
 void Node::setNodeVisited() {
     this->visited = true;
 }
