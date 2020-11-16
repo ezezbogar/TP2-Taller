@@ -11,7 +11,7 @@ void Results::showResults() {
 }
 
 void Results::loadResult(std::string filename, std::string exitcode) {
-    std::unique_lock<std::mutex> lck (this->mutex);
+    std::unique_lock<std::mutex> lck(this->mutex);
     long unsigned int pos = 0;
 
     std::vector<std::string>::iterator itFiles;

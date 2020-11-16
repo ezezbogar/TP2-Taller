@@ -10,7 +10,7 @@ class Node {
 
  public:
     /* Constructor */
-    Node(int cantidadNodos);
+    explicit Node(int cantidadNodos);
 
     /* Constructor por movimiento */
     Node(Node&& node) noexcept;

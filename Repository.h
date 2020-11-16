@@ -21,9 +21,6 @@ class Repository {
     /* Asignacion por copia borrado */
     Repository operator=(const Repository& repository) = delete;
 
-    /* Devuelve la cantidad de archivos en el repositorio */
-    int getAmountOfFiles();
-
     /* Devuelve el nombre de un archivo que todavia no haya sido
      * verificado */
     bool getFile(std::string &fileName);

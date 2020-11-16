@@ -1,4 +1,5 @@
 #include "Node.h"
+#include <utility>
 
 Node::Node(int cantidadNodos) {
     this->visited = false;

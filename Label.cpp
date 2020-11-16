@@ -1,6 +1,7 @@
 #include "Label.h"
+#include <utility>
 
-Label::Label(const std::string labelName, const int nodeNumber) {
+Label::Label(const std::string& labelName, const int nodeNumber) {
     this->labelName = labelName;
     this->nodeNumber = nodeNumber;
 }

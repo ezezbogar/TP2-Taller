@@ -8,12 +8,8 @@ Repository::Repository(const int argc, char **argv) {
     }
 }
 
-int Repository::getAmountOfFiles() {
-    return this->files.size();
-}
-
 bool Repository::getFile(std::string &fileName) {
-    std::unique_lock<std::mutex> lck (this->mutex);
+    std::unique_lock<std::mutex> lck(this->mutex);
     bool fileLeft = false;
     if ( static_cast<long unsigned int>(this->verifiedFiles)
     < this->files.size() ) {

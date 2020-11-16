@@ -5,6 +5,7 @@
 #include "Graph.h"
 #include "Repository.h"
 #include "Results.h"
+#include <string>
 
 class eBPFVerifier : public Thread {
  private:

@@ -3,6 +3,7 @@
 
 #include "Node.h"
 #include <string>
+#include <vector>
 
 class Graph {
  private:
@@ -16,7 +17,7 @@ class Graph {
 
  public:
     /* Constructor */
-    Graph(int cantidadNodos);
+    explicit Graph(int cantidadNodos);
 
     /* Constructor por copia borrado */
     Graph(const Graph& graph) = delete;

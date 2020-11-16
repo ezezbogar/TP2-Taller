@@ -4,6 +4,7 @@
 #include "Label.h"
 #include "Graph.h"
 #include <vector>
+#include <string>
 
 class Parser {
  private:
@@ -37,10 +38,10 @@ class Parser {
 
 private:
     /* Devuelve "true" si el string es algun jumpcode */
-    bool isJumpCode(const std::string instruction);
+    bool isJumpCode(const std::string& instruction);
 
     /* Devuelve "true" si el string es igual a "ret" */
-    bool isRetCode(const std::string instruction);
+    bool isRetCode(const std::string& instruction);
 };
 
 #endif  // PARSER_H_

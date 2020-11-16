@@ -10,7 +10,7 @@ class Label {
 
  public:
     /* Constructor */
-    Label(const std::string labelName, const int nodeNumber);
+    Label(const std::string& labelName, const int nodeNumber);
 
     /* Constructor por movimiento */
     Label(Label&& label) noexcept;
