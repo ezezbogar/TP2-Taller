@@ -27,3 +27,17 @@
 ​	Tanto las clases "Result" y "Repository" están implementadas a modo de monitor, esto es, cuentan con un mutex para que solo pueda acceder a las critical sections un thread a la vez y de esta forma evitar race conditions
 
 - Link al repositorio de GitHub: https://github.com/ezezbogar/TP2-Taller
+
+#### Reentrega
+
+​	A continuación se listan los cambios realizados para la reentrega:
+
+##### Issue 1:
+
+​	Se eliminó en todas las clases los constructores por copia y el operador = y a las clases las cuales eran pasadas por copia en algun momento del programa se les declaro un constructor por movimiento.
+
+​	También se cambió el pasaje por copia de distintos objetos como strings a pasaje por referencia.
+
+​	Además, se implementó el uso de "unique_lock" para los mutex que tiene la ventaja de ser RAII.
+
+ 
