@@ -11,7 +11,7 @@ void eBPFVerifier::verificar() {
     }
 }
 
-void eBPFVerifier::_verificar(std::string& fileName) {
+void eBPFVerifier::_verificar(const std::string& fileName) {
     std::fstream src;
     src.open(fileName);
     Parser parser;
