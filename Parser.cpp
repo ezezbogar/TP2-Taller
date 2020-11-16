@@ -97,7 +97,8 @@ void Parser::getLabels(std::fstream& file) {
             pos++;
         } else if ( c == ':' ) {
             labelAux = std::string(buf, pos);
-            this->labels.push_back(Label(labelAux, this->cantidadNodos));
+            Label label(labelAux, this->cantidadNodos);
+            this->labels.push_back(std::move(label));
         } else if ( c == '\n' && pos != 0 ) {
             pos = 0;
             this->cantidadNodos++;

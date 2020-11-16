@@ -4,7 +4,8 @@ Repository::Repository(const int argc, char **argv) {
     this->verifiedFiles = 0;
 
     for (int i = 2; i < argc; i++) {
-        this->files.push_back(std::string(argv[i]));
+        std::string fileName(argv[i]);
+        this->files.push_back(std::move(fileName));
     }
 }
 

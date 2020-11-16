@@ -9,7 +9,8 @@ Graph::Graph(int cantidadNodos) {
     this->hasUnusedInstructions = false;
 
     for (int j = 0; j < cantidadNodos; j++) {
-        this->nodes.push_back(Node(cantidadNodos));
+        Node node(cantidadNodos);
+        this->nodes.push_back(std::move(node));
     }
     for (int j = 0; j < cantidadNodos; j++) {
         this->marks.push_back(false);
