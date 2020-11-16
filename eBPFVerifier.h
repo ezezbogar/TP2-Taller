@@ -33,7 +33,7 @@ class eBPFVerifier : public Thread {
  private:
     void _verificar(std::string& fileName);
 
-    void _saveResults(std::string& fileName, const Graph &graph);
+    void _saveResults(const std::string& fileName, const Graph &graph);
 };
 
 #endif  // EBPFVERIFIER_H_
