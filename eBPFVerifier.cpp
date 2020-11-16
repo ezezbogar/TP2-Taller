@@ -24,7 +24,8 @@ void eBPFVerifier::_verificar(std::string& fileName) {
     src.close();
 }
 
-void eBPFVerifier::_saveResults(const std::string& fileName, const Graph &graph) {
+void eBPFVerifier::_saveResults(const std::string& fileName,
+                                const Graph &graph) {
     if ( graph.programhasCicles() ) {
         this->results.loadResult(fileName, "FAIL: cycle detected");
     } else if ( graph.programhasUnusedInstructions() ) {
